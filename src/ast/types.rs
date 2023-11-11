@@ -18,7 +18,8 @@ pub enum type_name {
     constant(storage_huff),
     event(event_huff),
     jump_table(jump_huff),
-    code_table(code_huff)
+    code_table(code_huff),
+    String(String),
 }
 
 impl Node for type_name {
@@ -31,7 +32,9 @@ impl Node for type_name {
         type_name::event(event_huff) => event_huff.accept(ast_definitions),
         type_name::jump_table(jump_huff) => jump_huff.accept(ast_definitions),
         type_name::code_table(code_huff) => code_huff.accept(ast_definitions)
-
+        type_name::String(_) => {
+            panic!()
+        }
        }
     }
 }
