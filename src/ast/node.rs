@@ -13,4 +13,8 @@ pub enum NodeType {
     ParamType,
     ParamList,
     RevertStatement,
+    Storage,
+    Return,
+    Emit,
+    VariableDeclaration
 }

@@ -12,13 +12,13 @@ pub struct type_descriptions {
 
 //Define custom types in huff
 pub enum type_name {
-    error_name(error_huff),
-    function_type_name(function_huff),
-    macro_type_name(macro_huff),
-    constant(storage_huff),
-    event(event_huff),
-    jump_table(jump_huff),
-    code_table(code_huff),
+    error_name(Error),
+    function_type_name(FunctionTypeName),
+    macro_type_name(FunctionTypeName),
+    constant(Storage),
+    event(Event),
+    jump_table(FunctionTypeName),
+    code_table(FunctionTypeName),
     String(string),
 }
 
