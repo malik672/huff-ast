@@ -1,14 +1,24 @@
-# huff-ast
-This is a asbtract syntax tree for huff written in rust
+#   
+Huff-AST
 
-# Reasons
-during the last huff hackathon, after trying to decide on a project to build, i had an idea for a project that dev tool that converts solidity to huff and huff to solidity, the question was how do i implement this, i thought of different ways including:
+Huff-AST is an Abstract Syntax Tree (AST) implementation for Huff, crafted in Rust to facilitate seamless conversion between Solidity and Huff. This project was born out of a compelling idea during the last Huff hackathon: a development tool capable of converting Solidity to Huff and vice versa. Faced with the challenge of choosing a feasible implementation method within a limited time frame, several approaches were considered.
 
-- compiling the code, extracting the bytecode and writing some set of algorithm to reverse engineer it into either huff or solidity depending on what input is provided, i dissmissed this after some thought, i mean think about this is there any tool that actually converts bytecode to soldity, that would take too much time and would actually involve a lot of guesses and unreliable solutions when the user will actually request for a conversion from huff to solidity and sincenrely way too much dev time tbh, i needed something more reliable, here comes the second solution
+## Implementation Approaches
 
-- huff and solidity are both evm compartible languages, that means they are both designed to work on the evm right, here comes the good part what if i generate the ast for both languages abstract away the differences and use an algorithm to conevrt the of one programming language to the other based on the ast. Let me explain that better, this how it works:
-AST Generation: Parse the source code of the input language (e.g., Solidity) to generate its AST -> Intermediate Representation (IR) Generation: Convert the AST into an intermediate representation that abstracts away language-specific details. This step aims to create a common representation that can be used as a basis for generating code in the target language. -> Language-Specific Transformation: Apply a set of algorithms and rules to the IR to handle differences between the source and target languages. This step involves mapping constructs and features from one language to their equivalents in the other language. Considerations may include differences in syntax, semantics, and language-specific idioms. -> Transformed IR: The output of the language-specific transformation is a transformed IR that captures the essence of the program in the target language.-> Code Generation: Finally, generate the code in the target language using the transformed IR. This step involves mapping the transformed IR back to language-specific constructs in the target language.
-Now this was a solution but i had a problem the huff hackathon was just 2 days, how was i going to build something this complex in two days.The answer was i can't so naturally i opened a repo made it private and just placed it there, God knows if i was ever going to come back to it.
+1.  **Bytecode Reverse Engineering:**
+    
+    -   Initially contemplating bytecode extraction and reverse engineering, it was quickly dismissed due to the complexity and unreliability of converting bytecode to Solidity. The potential for inaccuracies and the considerable development time required led to the exploration of a more reliable solution.
+2.  **AST-Based Conversion:**
+    
+    -   Recognizing that both Huff and Solidity are Ethereum Virtual Machine (EVM)-compatible languages, the decision was made to generate ASTs for both and abstract away the language-specific details. The conversion process involves:
+        -   **AST Generation:** Parsing the source code of the input language (e.g., Solidity) to generate its AST.
+        -   **IR Generation:** Converting the AST into an intermediate representation that abstracts away language-specific details.
+        -   **Language-Specific Transformation:** Applying algorithms and rules to the IR to handle differences between the source and target languages.
+        -   **Transformed IR:** Producing a transformed IR that captures the essence of the program in the target language.
+        -   **Code Generation:** Finally, generating code in the target language using the transformed IR.
 
-## Rust arc
-recently i started my rust arc, now the easiest way to cement your knowledge in a programming lanuguage is to build projects with it and when i mean projects i do not mean things like guess the number or calculator in rust, blah blah. Now as a developer there's this desire or complex feeling to actually build a project no one has never built before or complex tools and contributing to open sources, it's like orgasm but only this time you are doing this with programming, so back to topic ladies and gents i intoduce: Huff-ast, one of the first steps in the creation of a tool that converts solidity to huff and vice versa, i don't know if my project will be worth it tbh, i actually do not want to waste any time on things that can probably be a waste of time for me, if you think this a waste of time just email at aremumalik05@gmail.com with your reasons and if you like my projects, a really big if you can donate to me here ```0xB7E69Ee556dD3ec94F19D2f237ff12527bFFe6eB```
+The challenge arose during the time-constrained Huff hackathon, prompting the decision to open a private repository for future development, leaving the door open for a more comprehensive exploration.
+
+## Rust Arc
+
+Recently embarking on a Rust learning arc, I've come to appreciate that the best way to solidify language proficiency is through practical projects. As a developer, the desire to build unique, complex tools, and contribute to open-source projects is a driving force—an experience akin to an orgasm, but with programming. Thus, I present Huff-AST, representing the initial strides towards a tool capable of converting between Solidity and Huff. While the project's ultimate worth remains uncertain, your feedback is invaluable. If you believe this endeavor is worth pursuing or have reservations, kindly reach out to [aremumalik05@gmail.com](mailto:aremumalik05@gmail.com). If you appreciate my projects and wish to support, donations are welcome at `0xB7E69Ee556dD3ec94F19D2f237ff12527bFFe6eB`.
