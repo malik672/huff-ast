@@ -22,3 +22,5 @@ The challenge arose during the time-constrained Huff hackathon, prompting the de
 ## Rust Arc
 
 Recently embarking on a Rust learning arc, I've come to appreciate that the best way to solidify language proficiency is through practical projects. As a developer, the desire to build unique, complex tools, and contribute to open-source projects is a driving force—an experience akin to an orgasm, but with programming. Thus, I present Huff-AST, representing the initial strides towards a tool capable of converting between Solidity and Huff. While the project's ultimate worth remains uncertain, your feedback is invaluable. If you believe this endeavor is worth pursuing or have reservations, kindly reach out to [aremumalik05@gmail.com](mailto:aremumalik05@gmail.com). If you appreciate my projects and wish to support, donations are welcome at `0xB7E69Ee556dD3ec94F19D2f237ff12527bFFe6eB`.
+
+## NOTE: This project just started, had to make it public because i signed up for juicebox crowdfund and making the repo public is a requirement
