@@ -1,5 +1,6 @@
 use serde_json::Value;
 
+
 pub enum IRNode {
     Program(Vec<IRNode>),
     FunctionDeclaration(

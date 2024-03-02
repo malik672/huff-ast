@@ -1609,6 +1609,7 @@ dependencies = [
  "eyre",
  "serde_json",
  "syn-solidity",
+ "tokio",
 ]
 
 [[package]]

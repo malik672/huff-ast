@@ -1,4 +1,3 @@
-pub mod gen_ast;
-pub mod prelude;
-pub mod ir_generation;
-
+pub mod frontend;
+pub mod backend;
+pub mod ir;

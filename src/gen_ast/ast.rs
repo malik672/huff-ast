@@ -3,9 +3,10 @@ use std::env;
 use std::process::Command;
 
 pub fn ast_compile_single(contract: &str) -> bool {
+
     //generate sol ast from config file
     let project = Project::builder().build().unwrap();
-    let output = project.compile_files(vec![contract]).unwrap();
+    let output = project.compile_files(vec!["src/example.sol"]).unwrap();
     let ast = output
         .output()
         .sources
@@ -34,20 +35,13 @@ pub fn ast_sh_command() {
     ast_compile_single(contract);
 }
 
-pub fn checker() -> bool{
-    let check = ast_compile_single("../src/gen_ast/example.sol");
-    check
-}
-
 #[cfg(test)]
 mod tests {
-    use crate::gen_ast::ast::checker;
-
-    use super::ast_compile_single;
+    use crate::ast::ast_compile_single;
 
     #[test]
     fn test_ast_compile_single() {
-        let check = checker();
+        let check = ast_compile_single("");
         assert!(check);
     }
 
